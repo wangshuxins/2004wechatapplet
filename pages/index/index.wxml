@@ -1,15 +1,43 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!--pages/index/index.wxml-->
+<!-- 首页 -->
+<!-- 幻灯片 -->
+<swiper indicator-dots="true" autoplay="true" indicator-active-color="orange">
+    <block wx:for="{{images}}" wx:key="index">
+        <navigator url="/pages/car/car" open-type="switchTab" hover-class="navigator-hover" interval
+="3000" duration="1000">
+            <swiper-item>
+                    <view class="imgitem">
+                        <image src="{{item.nav_url}}" class="cimg"></image>
+                    </view>
+            </swiper-item>
+        </navigator>
+  </block>
+</swiper>
+<!-- 导航栏 -->
+  <view class="page-body">
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 95%">
+            <view wx:for="{{cateimg}}" wx:key="index"  class="scroll-view-item_H">
+                <a class="demo-text-{{item.cate_id}}">{{item.cate_name}}</a>
+            </view>
+        </scroll-view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-    <text class="user-motto">{{name1}}</text>
-    
+  <!-- 列表 -->
+  <view class='list' style="width:100%;height:260px; overflow:scroll; border:1px solid white;">
+  <block wx:for='{{goodsimg}}' wx:key='index' wx:for-item="item">
+  <view class="list_item">
+      <navigator url='details?id={{item.goods_id}}'>
+      <view class='img'>
+        <image src="{{item.goods_img}}"  mode="scaleToFill"/>
+      </view>
+      <view class='info'>
+        <view class='title'>{{item.goods_name}}</view>
+        <view class='brand'>{{item.brand_name}}</view>
+        <view class='price'>￥{{item.goods_price}}</view>
+      </view>
+       </navigator>
+      <view class='clear'></view>
   </view>
+  </block>
 </view>
+
+

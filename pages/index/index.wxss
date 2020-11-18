@@ -1,21 +1,92 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* pages/index/index.wxss */
+.imgitem{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.cimg{
+  width: 95%;
+  height: 100%;
+  text-align: center;
+}
+.page-body{
+  height: 42px;
+ 
+}
+.scroll-view_H{
+  white-space: nowrap;
+  margin-left: 8px;
+  line-height: 42px;
+  text-align: center;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 15%;
+  height: 50%;
+  line-height: 21px;
+  text-align: center;
+  background-color: white;
+  margin-right: 6px;
+  font-size: 12px;
+  color: #6f6f6f;
+  border: solid #eeeeee 1px;
+  border-radius:8px;
+}
+.demo-text-1{
+  color:#ff9000;
+}
+.clear{
+  clear: both;
+  overflow: hidden;
+}
+navigator{
+  display:inline;
+}
+.list{
+  margin-top:0px;
+}
+.list .list_item{
+  padding:5px;
+  height:100px;
+  border-bottom:1px solid #E8E8E8;
+}
+.list .list_item .img{
+  float:left;
+  width:40%;
+  height:100%;
+}
+.list .list_item .img image{
+   width:100%;
+   height:100%;
+}
+ 
+.list .list_item .info{
+  width:59%;
+  float:right;
+  height:100px;
+  position:relative;
+}
+.list .list_item .info .title{
+  color:#333;
+  margin-left:10px;
+  font-size: 15px;
+}
+ 
+.list .list_item .info .price{
+  position: absolute;
+  left:0px;
+  bottom:10px;
+  color:#ffae00;
+  margin-left:10px;
+  font-size:17px;
+}
+ 
+.list .list_item .info .brand{
+  color:#999999;
+  margin-left:10px;
+  margin-top:17px;
+  font-size:10px;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
